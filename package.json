@@ -1,7 +1,7 @@
 {
   "name": "react-bullet-graph",
-  "version": "1.0.0",
-  "description": "react-bullet-graph React component",
+  "version": "0.1.0",
+  "description": "React component for displaying bullet charts",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
