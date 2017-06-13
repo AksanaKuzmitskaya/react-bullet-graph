@@ -3,13 +3,22 @@ import React from "react";
 const HorizontalBulletGraph = React.createClass({
   render: function() {
     // Normalize values which exceed scaleMax prop
-    let badVal = Math.min(this.props.badVal, this.props.scaleMax),
-      satisfactoryVal = Math.min(
-        this.props.satisfactoryVal,
-        this.props.scaleMax
+    let badVal = Math.max(
+      Math.min(this.props.badVal, this.props.scaleMax),
+      this.props.scaleMin
+    ),
+      satisfactoryVal = Math.max(
+        Math.min(this.props.satisfactoryVal, this.props.scaleMax),
+        this.props.scaleMin
       ),
-      performanceVal = Math.min(this.props.performanceVal, this.props.scaleMax),
-      symbolMarker = Math.min(this.props.symbolMarker, this.props.scaleMax);
+      performanceVal = Math.max(
+        Math.min(this.props.performanceVal, this.props.scaleMax),
+        this.props.scaleMin
+      ),
+      symbolMarker = Math.max(
+        Math.min(this.props.symbolMarker, this.props.scaleMax),
+        this.props.scaleMin
+      );
 
     // Scale tick component props to specified component width prop
     let widthScale =
